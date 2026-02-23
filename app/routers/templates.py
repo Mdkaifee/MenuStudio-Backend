@@ -43,7 +43,7 @@ def _resolve_template_asset_fields(asset_url_raw: str, asset_type_raw: str):
 
 
 @router.get('/templates')
-def get_templates():
+def get_templates(current_user=Depends(get_current_user)):
     return {'templates': builtin_templates()}
 
 
