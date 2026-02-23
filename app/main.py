@@ -21,6 +21,11 @@ def create_app() -> FastAPI:
     app.include_router(items.router)
     app.include_router(restaurant.router)
     app.include_router(public.router)
+
+    @app.get('/')
+    def root():
+        return {'message': 'Restaurant Menu API is running', 'health': '/health', 'docs': '/docs'}
+
     return app
 
 
