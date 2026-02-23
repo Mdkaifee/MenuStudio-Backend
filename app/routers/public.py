@@ -44,6 +44,8 @@ def public_menu(restaurant_id: str) -> Dict[str, Any]:
         'restaurant_name': restaurant['restaurant_name'],
         'template_id': selected_template['id'],
         'template_style_id': selected_template['style_id'],
+        'template_asset_url': selected_template.get('asset_url', ''),
+        'template_asset_type': selected_template.get('asset_type', ''),
         'category_meta': category_meta,
         'categories': categories,
     }
